@@ -20,13 +20,15 @@ describe("Session tests #start_test:", function() {
       });
   });
   it("should check signup page #end_test", function(done) {
+    const date = new Date();
+    const unique = date.getTime();
     request(app)
       .post("/signup")
       .set("Accept", "application/json")
       .send({
-        name: "Freddie Mercury",
-        email: "fred@merc.com",
-        password: "123"
+        name: unique+"Freddie Mercury",
+        email: unique+"fred@merc.com",
+        password: unique+"123"
       })
       .end(function(err, res) {
         if (err) return done(err);
