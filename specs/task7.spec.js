@@ -9,7 +9,7 @@ describe("Functional Test: #start_test", function() {
     request(app)
       .post("/signin")
       .set("Accept", "application/json")
-      .send({ email: "john@wick.com", password: "mydog<3" })
+      .send({ email: "led@zeppelin.com", password: "stairwaytoheaven" })
       .then(function(err, res) {
         request(app)
           .post("/add")
