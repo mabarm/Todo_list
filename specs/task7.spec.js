@@ -10,10 +10,12 @@ describe("Functional Test: #start_test", function() {
       .post("/signin")
       .set("Accept", "application/json")
       .send({ email: "led@zeppelin.com", password: "stairwaytoheaven" })
-      .then(function(err, res) {
+      .then(function(res) {
+        Cookies = res.headers['set-cookie'];
         request(app)
           .post("/add")
           .send({ item: "My first item" })
+          .set('Cookie', Cookies)
           .set("Accept", "application/json")
           .end(function(err, res) {
             assert.equal(res.status, 302);
