@@ -25,3 +25,4 @@ describe("Functional Test: #start_test", function() {
       });
   });
 });
+
