@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup page</title>
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+        <link rel="stylesheet" type="text/css" href="../css/auth.css">
+    </head>
+    <body>
+        <h1>SIGN UP</h1>
+        <form action="/signup" method="POST">
+            <table class="ctable">
+                <tr>
+                    <td><input type="text" id="inputName" name="name" placeholder="Your Name" required autofocus/></td>
+                </tr>
+                <tr>
+                  <td><input type="email" id="inputEmail" name="email" placeholder="Email address" required autofocus/></td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="inputPassword"name="password" placeholder="Password" required/></td>   
+                </tr>
+                <tr>
+                    <td><button type ="submit">Sign up</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="location.href='/signin'">Already a User? Sign in</button></td>
+                </tr>
+            </table>                    
+        </form>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+ body{
+     text-align: left;
+    background-color: burlywood;
+    margin: auto;
+    padding: 10px;
+
+ }
+
+ h1,h2{
+  text-align:center;
+  font :bold large;
+  margin:1rem;
+}
+ table{
+    margin-right: 10%;
+    margin-top: 100px;
+    margin-bottom: 100px;     
+ }
+
+ tr {
+      background-color:lightblue
+  }
+ tr:nth-child(even) {
+  background-color: darkcyan
+}
+
+ tr button{
+     background-color: crimson;
+     width: 100%;
+  }
+ 
+ tr button:hover{
+  background-color: darkgreen
+ }
+
+ #td1{ width: 300px;
+ }
+
+ .done1 {
+    background-color: greenyellow;
+    text-decoration: line-through;
+ }
+  
+ 
+ #img{
+   width: 20px
+ }
+
+ #auth{
+  border-radius: 30%;
+  margin:1rem;
+  background-color: teal;
+  color: white;
+  padding: 7px;
+ }
+
+
+ 

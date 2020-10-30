@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+    <title>profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body >
+    <h1>Welcome</h1>
+    <h2>To-Do List</h2>
+
+    <p></p>
+    <form action="/add" method="post">
+        <input id="add_in" type="text" name="item" placeholder="Enter todo task" required>
+        <button type="submit"><img id="img" src="../assets/add_img.png" /></button>
+    </form>
+    <p></p>
+
+        <table>
+            <% for(var i =0; i<list.length; i++){%>     
+            <tr id="<%=list[i].id%>" class="done<%=list[i].done%>"  >
+                <td id="td1"><%=list[i].item %></td>   
+                <td> <button id="btn-edit" onclick="edit('<%=list[i].id%>','<%=list[i].item%>')">&#9998;</button>  </td>
+                <td> 
+                    <form action="/delete/<%=list[i].id%>" method="post">
+                       <button id="btn-delete" type="submit">&#10006;</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/done/<%=list[i].id%>">
+                        <input type="hidden" name="done" value=<%=list[i].done%>>
+                        <button id="btn-done" type="submit">&#10004;</button>
+                      </form>
+                </td>  
+            </tr>
+            <% } %>  
+        </table>
+
+        <script>
+            edit=(id,item)=>{
+                document.getElementById(id).style.display = "none"
+                var tr=document.createElement("tr");
+                var td=document.createElement("td");
+
+                var f=document.createElement("form");
+                f.setAttribute("method","post");
+                f.setAttribute("action","/edit/" + id);
+    
+                var i=document.createElement("input");
+                i.setAttribute('type',"text");
+                i.setAttribute('name',"item");
+                i.setAttribute('value',item);
+                i.setAttribute('required',true);
+    
+                var b=document.createElement("input");
+                b.setAttribute('type',"submit");
+                b.setAttribute('value',"save");
+    
+                f.appendChild(i);
+                f.appendChild(b);
+                td.appendChild(f);
+                tr.appendChild(td);
+
+                const edited = document.getElementById(id);
+                edited.parentNode.insertBefore(tr,edited);
+            }
+   
+        </script>
+
+        <p><button id="auth" onclick="location.href='/signout'">SIGNOUT</button></p>
+        
+    </body>
+</html>
