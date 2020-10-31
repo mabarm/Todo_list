@@ -24,34 +24,10 @@ app.engine("html",require("ejs").renderFile);
 app.set("view engine","ejs");
 
 app.use("/",route);
-/*
-app.get("/geton",(req,res)=>{
-    obj.users
-    .findAll({
-       where:{
-           email:"led@zeppelin.com"}
-    }).then(users=>{
-        res.send({
-            data:users
-        })
-    }).catch(err=>console.log("Oops! Something went wrong: ",err))
-});
 
-app.get("/getout",(req,res)=>{
-    obj.users.destroy({
-        where:{
-            name: "Led Zeppelin", 
-            email: "led@zeppelin.com",
-            password: "stairwaytoheaven"
-        },
-        truncate:true
-    }).then(result=>console.log("Destroy: success"))
-    .catch(err=>console.log("Oops! Something went wrong: ",err));
-})*/
 
 app.listen(4000,()=>{
     console.log("listening to 4000");
 });
 
 module.exports=app;
-//5,7 do..src,all 1 file must
