@@ -1,7 +1,7 @@
 const Sequelize=require("sequelize");
 const sequelize=new Sequelize({
     dialect: "sqlite",
-    storage: "./src/backend/databases/database.sqlite"
+    storage: "./backend/databases/database.sqlite"
 });
 
 const users =sequelize.define("users",{
